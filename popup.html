@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Popup</title>
+  <style>
+    .log textarea {
+      width: 300px;
+      height: 500px;
+      margin-top: 5px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class='content'>
+    <div class='ctrl'>
+      <input type="button" id='decode' value='decode'>
+      <input type='button' id='urlDecode' value='urlDecode'>
+      <input type='button' id='format' value='format'>
+    </div>
+    <div class='log'>
+      <textarea id='log-area'></textarea>
+    </div>
+  </div>
+</body>
+<script src="pako.min.js"></script>
+<script src="popup.js"></script>
+</html>
