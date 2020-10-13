@@ -8,6 +8,21 @@
       width: 300px;
       height: 500px;
       margin-top: 5px;
+      border: 1px solid #eaeaef;
+      border-radius: 4px;
+    }
+    .btn-group {
+      background-color: #f7f7fc;
+      margin: 0 0 5px 0;
+      padding: 5px;
+      color: #999aaa;
+    }
+    .btn-group input {
+      padding: 3px 6px;
+      color: #5094d5;
+      background-color: #fff;
+      border: 1px solid #eaeaef;
+      border-radius: 4px;
     }
   </style>
 
@@ -16,9 +31,17 @@
 <body>
   <div class='content'>
     <div class='ctrl'>
-      <input type="button" id='decode' value='decode'>
-      <input type='button' id='urlDecode' value='urlDecode'>
-      <input type='button' id='format' value='format'>
+      <div class='btn-group'>
+        <div class='btn-banner'>--通用功能--</div>
+        <input type='button' id='urlDecode' value='urlDecode'>
+        <input type='button' id='format' value='格式化json'>
+        <input type='button' id='unicode' value='unicode解码'>
+      </div>
+      <div class='btn-group'>
+        <div class='btn-banner'>--定制功能--</div>
+        <input type='button' id='decode' value='日志解密'>
+        <input type='button' id='buildReq' value='pc参数构建'>
+      </div>
     </div>
     <div class='log'>
       <textarea id='log-area'></textarea>
