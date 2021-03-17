@@ -5,6 +5,13 @@ var formatBtn = document.getElementById('format');
 var buildReqBtn = document.getElementById('buildReq');
 var unicodeBtn = document.getElementById('unicode');
 
+//转义
+var escapeBtn = document.getElementById("escape");
+var unescapeBtn = document.getElementById("unescape");
+
+//去除空格
+var compactBtn = document.getElementById("compact");
+
 var t = document.getElementById('log-area');
 
 decodeBtn.onclick = function () {
@@ -34,6 +41,21 @@ unicodeBtn.onclick = function () {
     str += String.fromCharCode(parseInt(data[i], 16).toString(10));
   }
   t.value = str;
+}
+
+escapeBtn.onclick = function() {
+  var val = t.value;
+  t.value = val.replace(/\"/g, "\\\"")
+}
+
+unescapeBtn.onclick = function() {
+  var val = t.value;
+  t.value = val.replace(/\\/g, "")
+}
+
+compactBtn.onclick = function() {
+  var val = t.value;
+  t.value = val.replace(/\s*/g,"");
 }
 
 function decode(log) {
