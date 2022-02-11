@@ -12,6 +12,8 @@ var unescapeBtn = document.getElementById("unescape");
 //去除空格
 var compactBtn = document.getElementById("compact");
 
+var sqlparamBtn = document.getElementById("sqlparam");
+
 var t = document.getElementById('log-area');
 
 decodeBtn.onclick = function () {
@@ -56,6 +58,20 @@ unescapeBtn.onclick = function() {
 compactBtn.onclick = function() {
   var val = t.value;
   t.value = val.replace(/\s*/g,"");
+}
+
+sqlparamBtn.onclick = function() {
+  data = t.value.split("\n");
+  var str = '';
+  for (var i = 0; i < data.length; i++) {
+    str += '\'';
+    str += data[i];
+    str += '\'';
+    if (i < data.length - 1) {
+      str += ',\n';
+    }
+  }
+  t.value = str;
 }
 
 function decode(log) {
